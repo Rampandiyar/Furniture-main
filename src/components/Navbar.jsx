@@ -4,14 +4,15 @@ import Basket from "../assets/Basket.png";
 import xm from "../assets/xm.svg";
 import ham from "../assets/ham.svg";
 import { useState } from "react";
+import { Link } from "react-scroll"; // Import Link from react-scroll
 
 export default function Navbar() {
   let Links = [
-    { name: "Home", link: "/" },
-    { name: "About Us", link: "/" },
-    { name: "Services", link: "/" },
-    { name: "Blog", link: "/" },
-    { name: "Contact", link: "/" },
+    { name: "Home", to: "home" },
+    { name: "About Us", to: "about" },
+    { name: "Services", to: "services" },
+    { name: "Blog", to: "blog" },
+    { name: "Contact", to: "footer" },
   ];
 
   let [open, setOpen] = useState(false);
@@ -24,7 +25,7 @@ export default function Navbar() {
           <img src={Fin} alt="fin" className="h-7" />
           <span className="text-white"></span>
         </div>
-        
+
         {/* Menu icon */}
         <div
           onClick={() => setOpen(!open)}
@@ -41,12 +42,14 @@ export default function Navbar() {
         >
           {Links.map((link, index) => (
             <li key={index} className="md:ml-8 lg:flex md:my-0 my-7 font-semibold">
-              <a
-                href={link.link}
-                className="text-white hover:underline hover:text-yellow-400"
+              <Link
+                to={link.to}
+                smooth={true}
+                duration={500} // This controls the scroll duration in milliseconds
+                className="text-white cursor-pointer hover:underline hover:text-yellow-400"
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
           <div className="flex h-7 justify-center pl-7">

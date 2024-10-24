@@ -14,16 +14,33 @@ function App() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <Cards />
-      <About />
-      <Services />
-      <Car />
-      <Car2/>
-      <Blog />
-      <Footer />
+      <section id="home">
+        <Hero />
+      </section>
+      <section id="cards">
+        <Cards />
+      </section>
+      <section id="about">
+        <About />
+      </section>
+      <section id="services">
+        <Services />
+      </section>
+      <section id="car">
+        <Car />
+      </section>
+      <section id="car2">
+        <Car2 />
+      </section>
+      <section id="blog">
+        <Blog />
+      </section>
+      <section id="footer">
+        <Footer />
+      </section>
     </>
   );
 }
+
 
 export default App;
