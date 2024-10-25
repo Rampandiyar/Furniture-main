@@ -1,9 +1,10 @@
+// Hero.js
 import couch from "../assets/couch 1.png";
 import dot from "../assets/Dot.png";
 
 export default function Hero() {
   return (
-    <div className="max-w-full mx-auto bg-my-green flex items-center justify-center lg:h-72 h-auto py-8 lg:py-0">
+    <div className="max-w-full mx-auto bg-my-green flex items-center justify-center lg:h-72 h-auto py-8 lg:py-0 relative z-10">
       <div className="relative flex flex-col lg:flex-row px-3 lg:ml-52 gap-6">
         
         {/* Text Section */}

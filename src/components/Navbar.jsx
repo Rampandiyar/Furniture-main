@@ -1,10 +1,11 @@
+// Navbar.js
 import Fin from "../assets/FIN.png";
 import User from "../assets/User.png";
 import Basket from "../assets/Basket.png";
 import xm from "../assets/xm.svg";
 import ham from "../assets/ham.svg";
 import { useState } from "react";
-import { Link } from "react-scroll"; // Import Link from react-scroll
+import { Link } from "react-scroll";
 
 export default function Navbar() {
   let Links = [
@@ -18,7 +19,7 @@ export default function Navbar() {
   let [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-my-green">
+    <div className="bg-my-green z-50 relative">
       <div className="md:flex items-center justify-between py-4 md:px-10 px-7">
         {/* Logo section */}
         <div className="font-bold text-2xl cursor-pointer flex items-center gap-1">
@@ -45,7 +46,7 @@ export default function Navbar() {
               <Link
                 to={link.to}
                 smooth={true}
-                duration={500} // This controls the scroll duration in milliseconds
+                duration={500}
                 className="text-white cursor-pointer hover:underline hover:text-yellow-400"
               >
                 {link.name}
